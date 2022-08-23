@@ -591,7 +591,7 @@
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <h5 class="text-secondary text-uppercase mb-4"> زموږ سره اړیکه </h5>
                 <p class="mb-4">سولر تبیک  سره کولای شی د خپل خوښې محصولات تر  لاسه کړی</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>کمپنی بازار 7 کوځه  سولرتیک</p>
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@solarsystem.com</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+39 777552554</p>
             </div>
