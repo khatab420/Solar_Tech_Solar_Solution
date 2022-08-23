@@ -26,7 +26,7 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="style.css?verssion=2" rel="stylesheet">
+    <link href="style.css?verssion=3" rel="stylesheet">
 </head>
 
 <body>
@@ -159,7 +159,7 @@
 
 
   <!-- Carousel Start -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <div class="container-fluid mb-3 mt-3" style="direction:;">
+    <div class="container-fluid mb-3 mt-4" style="direction:;">
         <div class="row px-xl-5">
                    <div class="col-lg-4 " >
                 <div class="product-offer mb-30" style="height: 200px;">
@@ -227,17 +227,17 @@
     <!-- Carousel End ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
        
-  <!-- Categories Start -->
-    <div class="container-fluid pt-5" style="direction:rt;">
+  <!-- Categories Start----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div class="container-fluid pt-5" style="direction:rtl;text-align: right;">
         <h2 style="text-align: right;" class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span  class="bg-secondary pr-3">کتګوری</span></h2>
         <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1" >
                 <a class="text-decoration-none" href="">
-                    <div class="cat-item d-flex align-items-center mb-4">
+                    <div class="cat-item d-flex align-items-center mb-4 ">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/cat-1.jpg" alt="">
+                            <img class="img-fluid" src="img/butery6.jpg" alt="">
                         </div>
-                        <div class="flex-fill pl-3">
+                        <div class="flex-fill pl-3" style="">
                             <h6>نوم</h6>
                             <small class="text-body">100 محصولات</small>
                         </div>
@@ -246,9 +246,9 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
+                    <div class="cat-item img-zoom d-flex align-items-right mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/cat-2.jpg" alt="">
+                            <img class="img-fluid" src="img/butery6.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6>نوم</h6>
@@ -381,7 +381,7 @@
                             <img class="img-fluid" src="img/cat-3.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
-                            <h6>نوم</h6>
+                            <h6>نوfffffم</h6>
                             <small class="text-body">100 محصولات</small>
                         </div>
                     </div>
@@ -389,8 +389,261 @@
             </div>
         </div>
     </div>
-     </div>
-    <!-- Categories End -->
+    <!-- Categories End ===================================================================================================================================================================================================================================================================================-->
+        <!-- Special Offer Start ================================================================================================================================================================================================================================================================-->
+    <div class="container-fluid pt-5 pb-3">
+        <div class="row px-xl-5">
+            <div class="col-md-6">
+                <div class="product-offer mb-30" style="height: 300px;">
+                    <img class="img-fluid" src="img/sumersible.jpg" alt="">
+                    <div class="offer-text">
+                        <h6 class="text-white text-uppercase">تخفیف 20%</h6>
+                        <h3 class="text-white mb-3">نوم</h3>
+                        <a href="" class="btn btn-primary">جریات</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-offer mb-30" style="height: 300px;">
+                    <img class="img-fluid" src="img/butery2.jpg" alt="">
+                    <div class="offer-text">
+                        <h6 class="text-white text-uppercase">تخفیف 20%</h6>
+                        <h3 class="text-white mb-3">نوم</h3>
+                        <a href="" class="btn btn-primary">جریات</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Special Offer End Here-=====================================================================================================================================================================================================================================================================-->
+
+
+     <!-- Recently Products Start here============================================================================================================================================================================================================================================= -->
+    <div class="container-fluid pt-5 pb-3">
+        <h2 style="text-align:right;" class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">وروستی مخصولات</span></h2>
+        <div class="row px-xl-5">
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href="">نوم</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>اف123.00</h5><h6 class="text-muted ml-2"><del>اف123.00</del></h6>
+                        </div>
+                       <!--  <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small>(99)</small>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/product-2.jpg" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href="">نوم</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>اف123.00</h5><h6 class="text-muted ml-2"><del>اف123.00</del></h6>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/product-3.jpg" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                                  </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href="">نوم</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>اف123.00</h5><h6 class="text-muted ml-2"><del>اف123.00</del></h6>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/product-4.jpg" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                           
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href="">نوم</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>اف123.00</h5><h6 class="text-muted ml-2"><del>اف123.00</del></h6>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/product-5.jpg" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                          <!--   <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href="">نوم</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>اف123.00</h5><h6 class="text-muted ml-2"><del>اف123.00</del></h6>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/product-6.jpg" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                          
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href="">نوم</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>اف123.00</h5><h6 class="text-muted ml-2"><del>اف123.00</del></h6>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/product-7.jpg" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                         
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href="">نوم</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>اف123.00</h5><h6 class="text-muted ml-2"><del>اف123.00</del></h6>
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/sumersible.jpg" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                           
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href="">نوم</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>اف123.00</h5><h6 class="text-muted ml-2"><del>اف123.00</del></h6>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products End  دلته-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+ </div>
+ <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <h5 class="text-secondary text-uppercase mb-4"> زموږ سره اړیکه </h5>
+                <p class="mb-4">سولر تبیک  سره کولای شی د خپل خوښې محصولات تر  لاسه کړی</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@solarsystem.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+39 777552554</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">لینکونه</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>کور  پاڼه</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>سټور</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>ګودام</a>
+                           
+                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>اړیکه</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                      <!--  for somethings if needed -->
+                    </div>
+                    <div class="col-md-4 mb-5">
+                       
+                       
+                            <div class="input-group">
+                              
+                            </div>
+                             
+                        <h6 class="text-secondary text-uppercase mt-4 mb-3"> تعقیب مو کړی</h6>
+                        <div class="d-flex">
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-secondary">
+                    &copy; <a class="text-primary" href="#">Solar System</a>. ټول حقوق له  سولر سیستم ادارې سره خوندی دی
+                    
+                    <a class="text-primary" href="https://htmlcodex.com">LighEast.com</a>
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="img/payments.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
          
      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>

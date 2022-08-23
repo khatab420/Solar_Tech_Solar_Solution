@@ -919,5 +919,121 @@ button.bg-secondary:focus {
   border-top: 1px dashed #bec5cb;
   z-index: -1;
 }
+.pt-5,
+.py-5 {
+  padding-top: 3rem !important;
+}
+.pb-3,
+.py-3 {
+  padding-bottom: 1rem !important;
+}
+.pl-3,
+.px-3 {
+  padding-left: 1rem !important;
+   margin-right: 10px;
+}
+product-item {
+  transition: .5s;
+}
+
+.product-action {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s;
+}
+
+.product-action a.btn {
+  position: relative;
+  margin: 0 3px;
+  margin-top: 100px;
+  opacity: 0;
+}
+
+.product-item:hover {
+  box-shadow: 0 0 30px #DDDDDD;
+}
+
+.product-item:hover .product-action {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.product-item:hover .product-action a.btn:first-child {
+  opacity: 1;
+  margin-top: 0;
+  transition: .3s 0s;
+}
+
+.product-item:hover .product-action a.btn:nth-child(2) {
+  opacity: 1;
+  margin-top: 0;
+  transition: .3s .05s;
+}
+
+.product-item:hover .product-action a.btn:nth-child(3) {
+  opacity: 1;
+  margin-top: 0;
+  transition: .3s .1s;
+}
+
+.product-item:hover .product-action a.btn:nth-child(4) {
+  opacity: 1;
+  margin-top: 0;
+  transition: .3s .15s;
+}
+
+.product-item .product-img img {
+  transition: .5s;
+}
+
+.product-item:hover .product-img img {
+  transform: scale(1.2);
+}
+
+.product-item .btn:hover {
+  color: #FFD333 !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-primary {
+  color: #FFD333 !important;
+}
+
+a.text-primary:hover, a.text-primary:focus {
+  color: #e6b400 !important;
+}
+.text-muted {
+  color: #6c757d !important;
+}
+.h4, h5, h6 {
+  font-weight: 500 !important;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.pb-30 {
+  padding-bottom: 30px;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #3D464D;
+}
 
 
