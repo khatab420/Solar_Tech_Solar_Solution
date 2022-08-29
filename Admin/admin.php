@@ -57,6 +57,10 @@
                         <a href="goods.php" class="nav-link px-2 text-truncate"><i class="bi bi-bricks fs-5"></i>
                             <span class="d-none d-sm-inline">Products</span> </a>
                     </li>
+                      <li>
+                        <a href="goods.php" class="nav-link px-2 text-truncate"><i class="bi bi-loan fs-5"></i>
+                            <span class="d-none d-sm-inline">Loan</span> </a>
+                    </li>
                    
                 </ul>
             </div>
