@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>admin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="admin.css">
 </head>
 <body>
 <header class="py-3 mb-4 border-bottom shadow">
@@ -65,9 +66,26 @@
 
             <div class="bg-light border rounded-3 p-3">
               <div class="col d-flex justify-content-end">
-                <a  class=" text-decoration-none" data-bs-toggle="modal" data-bs-target="#product" style="text-align:right;">
-   Add new product <i class="bi-plus"></i>
-  </a>
+                  <div class="btn-group  d-flex justify-content-center">
+                      <button type="button" class="bi-arreng btn btn-sm  dropdown-toggle" data-toggle="dropdown">ښکاره کول</button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                         <a class="dropdown-item" href="#">10</a>
+                          <a class="dropdown-item" href="#">20</a>
+                          <a class="dropdown-item" href="#">30</a>
+                       </div>
+                  </div>
+                    <div class="btn-group  d-flex justify-content-center">
+                      <button type="button" class="btn btn-sm  dropdown-toggle" data-toggle="dropdown">ترتیبول</button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#">وروستی مخصولات</a>
+                          <a class="dropdown-item" href="#">نوی مخصولات </a>
+                          <a class="dropdown-item" href="#">تحفیف شوی محصولات</a>
+                       </div>
+                  </div>
+                <a  class=" d-flex justify-content-end text-decoration-none" data-bs-toggle="modal" data-bs-target="#product" style="text-align:right;">
+                      Add new product <i class="bi-plus"></i>
+                 </a>
+                
               </div>
               <table class="table mt-2">
   <thead class="table-success overflow-auto h-100">
@@ -80,7 +98,7 @@
         <th>entry_date</th>
         <th>category_id</th>
         <th>company_id</th>
-        <th>  country_id</th>
+        <th> country_id</th>
         <th>currency</th>
       </tr>
     </thead>
@@ -101,33 +119,117 @@
     </tbody>
 </table>
             </div>
-
-            <!-- The Modal -->
+ <!-- add product modal =================================================================================================================================strat-->
 <div class="modal fade" id="product">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
+  <div class="modal-dialog ">
+    <div class="modal-content" >
 
       <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">add</h4>
+      <div class="modal-header" style="text-align: right;">
+        <h4 class="modal-title text-center w-100 ">ْنوی محلول اضافه کړی</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
-      <!-- Modal body -->
+  
       <div class="modal-body">
-        aaaaddd
-      </div>
+        <div class="card">
+           <form class="" >
+        
 
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <div class="input-group ">
+                  <input type="text" class="form-control" required placeholder="" name="goods_name">
+                   <span class="input-group-text">د حصول نوم</span>
+               </div>
+
+                <div class="input-group mt-2">
+                    <input type="text" class="form-control" required placeholder="" name="goods_discription">
+                    <span class="input-group-text">     جزیات</span>
+                </div>
+
+                <div class="input-group mt-2">
+                   <input type="text" class="form-control" required placeholder="" name="buy_price">
+                    <span class="input-group-text">د اخستلو بیه</span>
+                </div>
+
+                <div class="input-group mt-2">
+                    <select class="form-select form-control "required name="category_id">
+                      <option>....</option>
+                       <option>افغانی</option>
+                       <option>دالر</option>
+                       <option>کلدار</option>
+                
+                     </select>
+                    <span class="input-group-text">کټګوری</span>
+                </div>
+
+                <div class="input-group mt-2">
+                  <select class="form-select form-control "required name="country_id">
+                    <option>....</option>
+                    <option>افغانی</option>
+                    <option>دالر</option>
+                    <option>کلدار</option>
+                
+                    </select>
+                    <span class="input-group-text">هیواد</span>
+                </div>
+
+               <div class="input-group mt-2">
+                 <select class="form-select form-control "required name="company_id">
+                    <option>....</option>
+                    <option>افغانی</option>
+                    <option>دالر</option>
+                    <option>کلدار</option>
+                
+                 </select>
+                 <span class="input-group-text">کمپنی</span>
+               </div>
+                  <div class="input-group mt-2">
+                 <select class="form-select form-control "required name="company_id">
+                    <option>....</option>
+                    <option>افغانی</option>
+                    <option>دالر</option>
+                    <option>کلدار</option>
+                
+                 </select>
+                 <span class="input-group-text">یونټ</span>
+               </div>
+
+                <div class="input-group mt-2" >
+                      <input type="file" class="form-control" required placeholder="" name="buy_price">
+                   <span class="input-group-text">انځور</span>
+               </div>
+     
+              <div class="input-group mt-2">
+                 <button class="form-control btn btn-success" name="submit">ثیتول</button>
+              </div>
+     
+          </form>
+
       </div>
+    </div>
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بندول</button>
+        </div>
 
     </div>
   </div>
 </div>
+ <!-- product modal =================================== end============================================================================= -->
         </main>
     </div>
 </div>
+  <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
