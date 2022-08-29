@@ -67,7 +67,7 @@
             <div class="bg-light border rounded-3 p-3">
               <div class="col d-flex justify-content-end">
                   <div class="btn-group  d-flex justify-content-center">
-                      <button type="button" class="bi-arreng btn btn-sm  dropdown-toggle" data-toggle="dropdown">ښکاره کول</button>
+                      <button type="button" class="bi-sort btn btn-sm  dropdown-toggle" data-toggle="dropdown">ښکاره کول</button>
                       <div class="dropdown-menu dropdown-menu-right">
                          <a class="dropdown-item" href="#">10</a>
                           <a class="dropdown-item" href="#">20</a>
@@ -75,7 +75,7 @@
                        </div>
                   </div>
                     <div class="btn-group  d-flex justify-content-center">
-                      <button type="button" class="btn btn-sm  dropdown-toggle" data-toggle="dropdown">ترتیبول</button>
+                      <button type="button" class="bi-showing btn btn-sm  dropdown-toggle" data-toggle="dropdown">ترتیبول</button>
                       <div class="dropdown-menu dropdown-menu-right">
                           <a class="dropdown-item" href="#">وروستی مخصولات</a>
                           <a class="dropdown-item" href="#">نوی مخصولات </a>
@@ -138,7 +138,7 @@
 
                 <div class="input-group ">
                   <input type="text" class="form-control" required placeholder="" name="goods_name">
-                   <span class="input-group-text">د حصول نوم</span>
+                   <span class="input-group-text">د محصول نوم</span>
                </div>
 
                 <div class="input-group mt-2">
