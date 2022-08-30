@@ -179,26 +179,38 @@
                           <a class="dropdown-item" href="#">تحفیف شوی محصولات</a>
                        </div>
                   </div>
-                <a  class=" d-flex justify-content-end text-decoration-none" data-bs-toggle="modal" data-bs-target="#product" style="text-align:right;">
+              <!--   <a  class=" d-flex justify-content-end text-decoration-none" data-bs-toggle="modal" data-bs-target="#product" style="text-align:right;">
                       Add new product <i class="bi-plus"></i>
-                 </a>
+                 </a> -->
                 
               </div>
              <div class="row">
     <!--   today sell table start here =================================================================================================-->
-              <div class="col-lg-6 card" style="direction:rtl;">
+              <div class="col"></div>
+              <div class="col-lg-10 card" style="direction:rtl;">
 
-                 <table class="table table-bordered border-primary" >
-                 <thead class="overflow-auto h-100">
-                                   <h5 class="card-title">تر ټول ډیر خرڅ شوی <span>| نن</span></h5>
+                   <h5 class="card-title d-flex d-sm-inline">بیل او انوایس <span>| نن</span></h5>
+                   
                   <tr class="">
 
+                 <table class="table table-bordered border-primary" >
+                   <a  class=" d-flex justify-content text-decoration-none text-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="text-align:righ;">
+                       Create New Bill <i class="bi-plus"></i>
+                   </a>
+
+                 <thead class="overflow-auto h-100">
+                                  
                     
-                     <th>انځور</th>
-                     <th>نوم</th>
-                     <th>د اخسبلو بیه</th>
-                     <th>د خرځ بیه</th>
-                     <th>ګټه</th>
+                    <th>بیل آی ډی</th>
+                    <th>مشتری آی ډی</th>
+                    <th>د مخصول آی ډي</th>
+                    <th>خرڅونکی آی ډی</th>
+                    <th>سټور آی ډي</th>
+                    <th>تاریخ</th>
+                    <th>مقدار</th>
+                    <th>حالت</th>
+                    <th>پولی واخد</th>
+                    <th>حالت</th>
                     
                  </tr>
 
@@ -210,7 +222,13 @@
                             <td>data</td>
                             <td>data</td>
                             <td>data</td>
-                            <td>$12</td> 
+                            <td>data</td>
+                            <td>data</td>
+                            <td>data</td>
+                            <td>data</td>
+                            <td>data</td>
+                            <td>data</td>
+                           
                         </tr>
      
       
@@ -218,197 +236,94 @@
                  </table> 
              </div>
      <!--   today sell table start here =================================================================================================-->
-         <div class="col-lg-6 card" style="direction:rtl;">
-                    <h5 class="card-title">وروستی خرڅ شوی مخصولات<span>| نن</span></h5>
-            <table class="table table-bordered border-primary" >
-                <thead class="overflow-auto h-100">
-      
-                  <tr class="">
+       
 
-                    
-                     <th>انځور</th>
-                     <th>نوم</th>
-                     <th>د اخسبلو بیه</th>
-                     <th>د خرځ بیه</th>
-                     <th>ګټه</th>
-                    
-                 </tr>
-
-               </thead>
-              <tbody>
-
-                 <tr>
-                    <td>data</td>
-                    <td>data</td>
-                    <td>data</td>
-                    <td>data</td>
-                    <td>$12</td>  
-                  </tr>
-               </tbody>
-             </table> 
-         </div>
-
-<!-- ================================================================================================================================================chart start here -->
-                    <div class="col-lg-6 card">
-                        <canvas id="product" style="width:100%;max-width:600px"></canvas>
-
-                                <script>
-                                        var xValues = ["بطری", "شمسی", "سمرسیبل", "مولد", "پمپ"];
-                                        var yValues = [100, 49, 50, 24, 72];
-                                        var barColors = ["red", "green","blue","orange","brown"];
-
-                                      new Chart("product", {
-                                                     type: "bar",
-                                                     data: {
-                                                     labels: xValues,
-                                                     datasets: [{
-                                                     backgroundColor: barColors,
-                                                     data: yValues
-                                                          }]
-                                                         },
-                                            options: {
-                                                  legend: {display: false},
-                                                  title: {
-                                                  display: true,
-                                                  text: "تول خرڅ شوی مخصولات"
-                                                         }
-                                                    }
-                                                });
-                                </script>
-                    </div>
-                    <div class="col-lg-6 card">
-                        <canvas id="exsitedproduct" style="width:100%;max-width:600px"></canvas>
-
-                                        <script>
-                                         var xValues = ["بطری", "شمسی", "پمپ", "مولد", "سولر"];
-                                         var yValues = [55, 49, 44, 24, 15];
-                                         var barColors = [
-                                           "#b91d49",
-                                          "#00aba9",
-                                          "#2b5797",
-                                          "#e8c3b9",
-                                          "#1e7145"
-                                        ];
-
-                                            new Chart("exsitedproduct", {
-                                              type: "doughnut",
-                                              data: {
-                                                labels: xValues,
-                                                datasets: [{
-                                                  backgroundColor: barColors,
-                                                  data: yValues
-                                                }]
-                                              },
-                                              options: {
-                                                title: {
-                                                  display: true,
-                                                  text: "موجود محصولات"
-                                                }
-                                              }
-                                            });
-                                          </script>
-                    </div>
+  <!--         <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> <i class="fa fa-info"></i> Get information
+</button> -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body ">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 
-                   </div>
-            
+                <div class="px-4 py-5">
+
+                   
+                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">بیل آی ډي</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">بیل نمر</label>
+                      <input type="email" name="email" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please enter number!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">پولی واخد</label>
+                      <input type="email" name="email" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please enter price!</div>
+                    </div>
+                      <div class="col-12">
+                      <label for="yourName" class="form-label">مشتری آی ډی</label>
+                      <input type="text" name="name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                      <div class="col-12">
+                      <label for="yourName" class="form-label">محصول آی ډي</label>
+                      <input type="text" name="name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill info!</div>
+                    </div>
+                      <div class="col-12">
+                      <label for="yourName" class="form-label">قمت</label>
+                      <input type="text" name="name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill info!</div>
+                    </div>
+                      <div class="col-12">
+                      <label for="yourName" class="form-label">مقدار</label>
+                      <input type="text" name="name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill ifo!</div>
+                    </div>
+                      <div class="col-12">
+                      <label for="yourName" class="form-label">د خر څوونکی آی ډي</label>
+                      <input type="text" name="name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill info!</div>
+                    </div>
+                      <div class="col-12">
+                      <label for="yourName" class="form-label">سټور آی ډي</label>
+                      <input type="text" name="name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill info!</div>
+                    </div>
+
+                    
+                  
+
+                
+                  </form>
+
+
+
+                <div class="text-center mt-5">
+
+
+                    <button class="btn btn-primary" type="submit">ثبتول</button>
+                    
+
+
+                </div>                   
+
+                </div>
+
+
             </div>
- <!-- chart=================================================================================================================================strat-->
-<div class="modal fade" id="product">
-  <div class="modal-dialog ">
-    <div class="modal-content" >
-
-      <!-- Modal Header -->
-      <div class="modal-header" style="text-align: right;">
-        <h4 class="modal-title text-center w-100 ">ْنوی محلول اضافه کړی</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-  
-      <div class="modal-body">
-        <div class="card">
-           <form class="" >
-        
-
-                <div class="input-group ">
-                  <input type="text" class="form-control" required placeholder="" name="goods_name">
-                   <span class="input-group-text">د حصول نوم</span>
-               </div>
-
-                <div class="input-group mt-2">
-                    <input type="text" class="form-control" required placeholder="" name="goods_discription">
-                    <span class="input-group-text">     جزیات</span>
-                </div>
-
-                <div class="input-group mt-2">
-                   <input type="text" class="form-control" required placeholder="" name="buy_price">
-                    <span class="input-group-text">د اخستلو بیه</span>
-                </div>
-
-                <div class="input-group mt-2">
-                    <select class="form-select form-control "required name="category_id">
-                      <option>....</option>
-                       <option>افغانی</option>
-                       <option>دالر</option>
-                       <option>کلدار</option>
-                
-                     </select>
-                    <span class="input-group-text">کټګوری</span>
-                </div>
-
-                <div class="input-group mt-2">
-                  <select class="form-select form-control "required name="country_id">
-                    <option>....</option>
-                    <option>افغانی</option>
-                    <option>دالر</option>
-                    <option>کلدار</option>
-                
-                    </select>
-                    <span class="input-group-text">هیواد</span>
-                </div>
-
-               <div class="input-group mt-2">
-                 <select class="form-select form-control "required name="company_id">
-                    <option>....</option>
-                    <option>افغانی</option>
-                    <option>دالر</option>
-                    <option>کلدار</option>
-                
-                 </select>
-                 <span class="input-group-text">کمپنی</span>
-               </div>
-                  <div class="input-group mt-2">
-                 <select class="form-select form-control "required name="company_id">
-                    <option>....</option>
-                    <option>افغانی</option>
-                    <option>دالر</option>
-                    <option>کلدار</option>
-                
-                 </select>
-                 <span class="input-group-text">یونټ</span>
-               </div>
-
-                <div class="input-group mt-2" >
-                      <input type="file" class="form-control" required placeholder="" name="buy_price">
-                   <span class="input-group-text">انځور</span>
-               </div>
-     
-              <div class="input-group mt-2">
-                 <button class="form-control btn btn-success" name="submit">ثیتول</button>
-              </div>
-     
-          </form>
-
-      </div>
-    </div>
-
-         <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بندول</button>
         </div>
-
     </div>
-  </div>
 </div>
- <!-- product modal =================================== end============================================================================= -->
+                
+                   
+ <!-- bill modal =================================== end============================================================================= -->
         </main>
         <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3" style="text-align:right;">
             <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
@@ -430,7 +345,7 @@
                     </li>
 
                     <li>
-                        <a href="bill.php" class="nav-link px-2 text-truncate">
+                        <a href="goods.php" class="nav-link px-2 text-truncate">
                              <span class="d-none d-sm-inline">Bill</span>
                           <i class="bi bi-receipt fs-5"></i>
                             </a>
