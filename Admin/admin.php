@@ -62,7 +62,9 @@
                     <li class="dropdown-header text-start">
                       <h6>پلټنه</h6>
                     </li>
-
+                    <li>  <a  class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addcustomer" style="text-align:right;">
+                      نوی مشتری <i class="bi-plus"></i>
+                        </a></li>
                     <li><a class="dropdown-item" href="#">نن</a></li>
                     <li><a class="dropdown-item" href="#">میاشت</a></li>
                     <li><a class="dropdown-item" href="#">کال</a></li>
@@ -86,14 +88,67 @@
                 </div>
               </div>
 
-            </div><!-- End Customers Card -->
+<!--  add new customer modal start here------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="modal fade" id="addcustomer" data-backdrop="static" data-keyboard="false" tabindex="-1"               aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body ">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                
+                <div class="px-4 py-5">
+                        <h5 class="card-title"><span>د مشتری معلومات د ننه کړي!</span></h5>
+                   
+                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">نوم</label>
+                      <input type="text" name="customoer_name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">پلار نوم</label>
+                      <input type="tex" name="customemer_f_name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please enter number!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">ایمل</label>
+                      <input type="email" name="customer_email" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please enter price!</div>
+                    </div>
+                     <div class="col-12">
+                      <label for="for add" class="form-label">ادرس</label>
+                      <input type="email" name="customer_address" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please enter price!</div>
+                    </div>
+                     <div class="col-12">
+                      <label for="for file" class="form-label">انځور</label>
+                      <input type="file" name="email" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please enter price!</div>
+                    </div>
+                   
+                          <div class="text-center mt-5">
+
+                            <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+
+                         </div>                   
+
+                     </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+         
+
+            </div><!-- End Customers --------------------------------------------------------------------------------------------------------------------------------------------------Card -->
 
 
                     <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-4" style="direction:rtl;">
-              <div class="card info-card revenue-card" style="background-color: #eef;">
+    <div class="col-xxl-4 col-md-4" style="direction:rtl;">
+            <div class="card info-card revenue-card" style="background-color: #eef;">
 
-                <div class="filter">
+            <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <li class="dropdown-header text-start">
@@ -104,7 +159,7 @@
                     <li><a class="dropdown-item" href="#">میاشت</a></li>
                     <li><a class="dropdown-item" href="#">کال</a></li>
                   </ul>
-                </div>
+            </div>
 
                 <div class="card-body">
                   <h5 class="card-title">ګټه <span>| میاشت</span></h5>
@@ -129,7 +184,7 @@
 
 
                 <div class="filter" style="direction: rtl;">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <a class="dropdown-item" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <li class="dropdown-header text-start">
                       <h6>Filter</h6>
@@ -179,17 +234,14 @@
                           <a class="dropdown-item" href="#">تحفیف شوی محصولات</a>
                        </div>
                   </div>
-                <a  class=" d-flex justify-content-end text-decoration-none" data-bs-toggle="modal" data-bs-target="#product" style="text-align:right;">
-                      Add new product <i class="bi-plus"></i>
-                 </a>
+              
                 
               </div>
-             <div class="row">
-    <!--   today sell table start here =================================================================================================-->
-              <div class="col-lg-6 card" style="direction:rtl;">
+               <div class="row">
+                    <div class="col-lg-6 card" style="direction:rtl;">
 
-                 <table class="table table-bordered border-primary" >
-                 <thead class="overflow-auto h-100">
+                        <table class="table table-bordered border-primary" >
+                       <thead class="overflow-auto h-100">
                                    <h5 class="card-title">تر ټول ډیر خرڅ شوی <span>| نن</span></h5>
                   <tr class="">
 
@@ -202,7 +254,7 @@
                     
                  </tr>
 
-                        </thead>
+                    </thead>
                       <tbody>
 
                          <tr>
@@ -214,14 +266,13 @@
                         </tr>
      
       
-                </tbody>
-                 </table> 
-             </div>
-     <!--   today sell table start here =================================================================================================-->
-         <div class="col-lg-6 card" style="direction:rtl;">
-                    <h5 class="card-title">وروستی خرڅ شوی مخصولات<span>| نن</span></h5>
-            <table class="table table-bordered border-primary" >
-                <thead class="overflow-auto h-100">
+                      </tbody>
+                     </table> 
+                    </div>
+                     <div class="col-lg-6 card" style="direction:rtl;">
+                         <h5 class="card-title">وروستی خرڅ شوی مخصولات<span>| نن</span></h5>
+                        <table class="table table-bordered border-primary" >
+                       <thead class="overflow-auto h-100">
       
                   <tr class="">
 
@@ -242,11 +293,15 @@
                     <td>data</td>
                     <td>data</td>
                     <td>data</td>
-                    <td>$12</td>  
+                    <td>$12</td>
+                
+                   
                   </tr>
+     
+      
                </tbody>
              </table> 
-         </div>
+                    </div>
 
 <!-- ================================================================================================================================================chart start here -->
                     <div class="col-lg-6 card">
@@ -430,7 +485,7 @@
                     </li>
 
                     <li>
-                        <a href="bill.php" class="nav-link px-2 text-truncate">
+                        <a href="goods.php" class="nav-link px-2 text-truncate">
                              <span class="d-none d-sm-inline">Bill</span>
                           <i class="bi bi-receipt fs-5"></i>
                             </a>
