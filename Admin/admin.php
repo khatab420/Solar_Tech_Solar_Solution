@@ -7,7 +7,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>admin</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="admin.css?verssion=2">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -18,11 +18,11 @@
 
         <div class="col-lg-4 d-flex justify-content-start ">
 
-                <a href="" class="text-decoration-none">
-                    <span class="h1 text-uppercase text-warning bg-dark px-2">SOLAR</span>
-                    <span class="h1 text-uppercase text-dark bg-warning px-2 ml-n1">SYSTEM</span>
-                </a>
-            </div>
+        <a href="" class="text-decoration-none">
+            <span class="h1 text-uppercase text-warning bg-dark px-2">SOLAR</span>
+            <span class="h1 text-uppercase text-dark bg-warning px-2 ml-n1">SYSTEM</span>
+        </a>
+       </div>
         <div class="flex-grow-1 d-flex align-items-center">
             <form class="w-100 me-3">
                 <input type="search" class="form-control" placeholder="Search...">
@@ -140,9 +140,237 @@
     </div>
 </div>
          
+</div><!-- End Customers --------------------------------------------------------------------------------------------------------------------------------------------------Card -->
 
-            </div><!-- End Customers --------------------------------------------------------------------------------------------------------------------------------------------------Card -->
 
+<!-- Catagot modal start here ==============================================================================================================================================================================================================================================================================================-->
+
+<div class="modal left fade" id="catagory" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col">
+                    <div class="modal-body ">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                
+                <div class="px-4 py-5">  
+                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">آی ډی</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                     <div class="col-12">
+                      <label for="yourName" class="form-label">نوم</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                
+                  </form>
+                <div class="text-center mt-5">
+
+                    <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+                    
+                </div>                   
+
+                </div>
+
+
+            </div> 
+                </div>
+                <div class="col">
+                    list of catagory
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+<!-- Catgory modal end here ==========================================================================================================================================================================================================================================================================-->
+
+
+
+<!-- Company modal start here ========================================================================================================================================================================-->
+
+<div class="modal left fade" id="company" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col">
+                    <div class="modal-body ">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                
+                <div class="px-4 py-5">  
+                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">آی ډی</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                     <div class="col-12">
+                      <label for="yourName" class="form-label">نوم</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                
+                  </form>
+                <div class="text-center mt-5">
+
+                    <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+                    
+                </div>                   
+
+                </div>
+
+
+            </div> 
+                </div>
+                <div class="col">
+                    list of Company
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+<!-- Company modle end here ====================================================================================================================================================================================================-->
+
+<!-- countery modal start here ===============================================================================================================================================================================================================================================-->
+
+<div class="modal left fade" id="country" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col">
+                    <div class="modal-body ">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                
+                <div class="px-4 py-5">  
+                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">آی ډی</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                     <div class="col-12">
+                      <label for="yourName" class="form-label">نوم</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                
+                  </form>
+                <div class="text-center mt-5">
+
+                    <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+                    
+                </div>                   
+
+                </div>
+
+
+            </div> 
+                </div>
+                <div class="col">
+                    list of countery
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<!-- countery modal end here ============-===================================================================================================================================================================================================================================-->
+
+<div class="modal left fade" id="currency" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+         <div class="row">
+            <div class="col">
+             <div class="modal-body ">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                
+                <div class="px-4 py-5">  
+                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">آی ډی</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                     <div class="col-12">
+                      <label for="yourName" class="form-label">نوم</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                     <div class="col-12">
+                      <label for="yourName" class="form-label">سمبول</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                 <div class="text-center mt-5">
+
+                    <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+                    
+                </div> 
+                  </form>
+                                 
+                </div>
+
+
+             </div> 
+            </div>
+                <div class="col">
+                    list of currency 
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<!-- currency modal start here ==================================================================================================================================================================================================================================================-->
+
+<div class="modal left fade" id="country" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col">
+                    <div class="modal-body ">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                
+                <div class="px-4 py-5">  
+                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">آی ډی</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                     <div class="col-12">
+                      <label for="yourName" class="form-label">نوم</label>
+                      <input type="text" name="" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                    </div>
+                
+                  </form>
+                <div class="text-center mt-5">
+
+                    <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+                    
+                </div>                   
+
+                </div>
+
+
+            </div> 
+                </div>
+                <div class="col">
+                    list of countery
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<!-- currency modal end here=================================================================================================================================================================================================================================================== -->
 
                     <!-- Revenue Card -->
     <div class="col-xxl-4 col-md-4" style="direction:rtl;">
@@ -187,7 +415,7 @@
                   <a class="dropdown-item" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
+                      <h6>پلټنه</h6>
                     </li>
 
                     <li><a class="dropdown-item" href="#">نن</a></li>
@@ -233,19 +461,15 @@
                           <a class="dropdown-item" href="#">نوی مخصولات </a>
                           <a class="dropdown-item" href="#">تحفیف شوی محصولات</a>
                        </div>
-                  </div>
-              
-                
+                  </div>     
               </div>
                <div class="row">
                     <div class="col-lg-6 card" style="direction:rtl;">
 
-                        <table class="table table-bordered border-primary" >
-                       <thead class="overflow-auto h-100">
+                 <table class="table table-bordered border-primary" >
+                    <thead class="overflow-auto h-100">
                                    <h5 class="card-title">تر ټول ډیر خرڅ شوی <span>| نن</span></h5>
-                  <tr class="">
-
-                    
+                  <tr class="">    
                      <th>انځور</th>
                      <th>نوم</th>
                      <th>د اخسبلو بیه</th>
@@ -269,25 +493,19 @@
                       </tbody>
                      </table> 
                     </div>
-                     <div class="col-lg-6 card" style="direction:rtl;">
-                         <h5 class="card-title">وروستی خرڅ شوی مخصولات<span>| نن</span></h5>
-                        <table class="table table-bordered border-primary" >
-                       <thead class="overflow-auto h-100">
-      
+         <div class="col-lg-6 card" style="direction:rtl;">
+                    <h5 class="card-title">وروستی خرڅ شوی مخصولات<span>| نن</span></h5>
+            <table class="table table-bordered border-primary" >
+                <thead class="overflow-auto h-100">
                   <tr class="">
-
-                    
                      <th>انځور</th>
                      <th>نوم</th>
                      <th>د اخسبلو بیه</th>
                      <th>د خرځ بیه</th>
-                     <th>ګټه</th>
-                    
+                     <th>ګټه</th>  
                  </tr>
-
                </thead>
               <tbody>
-
                  <tr>
                     <td>data</td>
                     <td>data</td>
@@ -297,11 +515,9 @@
                 
                    
                   </tr>
-     
-      
                </tbody>
-             </table> 
-                    </div>
+            </table> 
+        </div>
 
 <!-- ================================================================================================================================================chart start here -->
                     <div class="col-lg-6 card">
@@ -364,7 +580,7 @@
                                           </script>
                     </div>
                 
-                   </div>
+               </div>
             
             </div>
  <!-- chart=================================================================================================================================strat-->
@@ -476,7 +692,41 @@
                             
                         </a>
                     </li>
-               
+                      <li>
+                        <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#catagory" style="text-align:righ;">
+                             <span class="d-none d-sm-inline">Catagory</span>
+                          <i class="bi bi-bricks fs-5"></i>
+                            </a>
+                    </li>
+                      <li>
+                        
+                        <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#company" style="text-align:righ;">
+                             <span class="d-none d-sm-inline">Company</span>
+                          <i class="bi bi-bricks fs-5"></i>
+                            </a>
+                    </li>
+                     <li>
+                        
+                        <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#country" style="text-align:righ;">
+                                <span class="d-none d-sm-inline">Countery</span>
+                                <i class="bi bi-bricks fs-5"></i>
+                        </a>
+                    </li>
+                    <li>
+                        
+                        <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#currency" style="text-align:righ;">
+                                <span class="d-none d-sm-inline">currency</span>
+                                <i class="bi bi-bricks fs-5"></i>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="sells.php" class="nav-link px-2 text-truncate">
+                             <span class="d-none d-sm-inline">Sells</span>
+                          <i class="bi bi-shop fs-5"></i>
+                            </a>
+                    </li>
                     <li>
                         <a href="goods.php" class="nav-link px-2 text-truncate">
                              <span class="d-none d-sm-inline">Products</span>
@@ -485,13 +735,13 @@
                     </li>
 
                     <li>
-                        <a href="goods.php" class="nav-link px-2 text-truncate">
+                        <a href="bill.php" class="nav-link px-2 text-truncate">
                              <span class="d-none d-sm-inline">Bill</span>
                           <i class="bi bi-receipt fs-5"></i>
                             </a>
                     </li>
                     <li>
-                        <a href="goods.php" class="nav-link px-2 text-truncate">
+                        <a href="loan.php" class="nav-link px-2 text-truncate">
                              <span class="d-none d-sm-inline"> Loan</span>
                           <i class="bi bi-bank fs-5"></i>
                             </a>
