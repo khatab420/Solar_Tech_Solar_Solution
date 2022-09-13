@@ -1,3 +1,199 @@
+<?php 
+
+function addcustomer(){
+   // echo  $filename = $_FILES["uploadfile"]["name"];
+$name =$_POST['customoer_name'];
+$fname=$_POST['customerfname'];
+$email = $_POST['customer_email'];
+$location = $_POST['location'];
+ require_once('DBConnection.php');
+
+
+$sqll="SET FOREIGN_KEY_CHECKS = 0;";
+$conn->query($sqll);
+$location = $_POST['location'];
+    $dist = $_POST['dist'];
+    $province =$_POST['province'];
+    $sql2="INSERT INTO `location` (`location_name`, `location_province`, `location_district`) VALUES ( '$location', '$province', '$dist');";
+    if (!$conn->query($sql2)) {
+        echo "opps!";
+    }
+
+    // set the customer address
+$sql3 ="SELECT location_id FROM `location` ORDER BY `location_id` DESC LIMIT 1";
+$result = $conn->query($sql3);
+$id = $result->fetch_assoc();
+$locationid=$id["location_id"];
+//$conn->query($sql2);
+// select image and uploaded it as customer profile image
+ $uniquesavename=time().uniqid(rand());
+  $targetDir = "uploads/";
+$fileName = basename($_FILES["image"]["name"]);
+$targetFilePath = $targetDir.$uniquesavename.$fileName;
+$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+$allowTypes = array('jpg','png','jpeg','gif');
+    if(in_array($fileType, $allowTypes)){
+        // Upload file to server
+        if(move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)){
+                
+
+        }else{
+            $statusMsg = "Sorry, there was an error uploading your file.";
+        }
+    
+}
+
+$sql7 ="INSERT INTO `customer` (`customer_id`, `customer_name`, `customer_f_name`, `customer_email`,`cutomer_image`,`customer_address`) VALUES (NULL, '$name', '$fname', '$email','$fileName','$locationid')";
+if(!$conn->query($sql7)){
+    echo "opps some wrong";
+}
+else{
+    success();
+}
+// add mobile numbers
+$sql4 ="SELECT customer_id FROM `customer` ORDER BY `customer_id` DESC LIMIT 1";
+$result = $conn->query($sql4);
+$id = $result->fetch_assoc();
+$mobile=$id["customer_id"];
+$mobileNO =$_POST['mobile'];
+$sql5 ="INSERT INTO `mobile_numbers` (`mobile_number`, `customer_id`) VALUES ('$mobileNO', '$mobile');";
+$conn->query($sql5);
+    
+$mobileNO1 =$_POST['mobile1'];
+$sql5 ="INSERT INTO `mobile_numbers` (`mobile_number`, `customer_id`) VALUES ('$mobileNO1', '$mobile');";
+$conn->query($sql5);
+
+$mobileNO2 =$_POST['mobile2'];
+$sql5 ="INSERT INTO `mobile_numbers` (`mobile_number`, `customer_id`) VALUES ('$mobileNO2', '$mobile');";
+$conn->query($sql5);
+      //header( "Location: admin.php" ); 
+
+
+}
+if (isset($_POST['submit'])) {
+  // setaddress();
+    addcustomer();
+     
+}
+// Add category
+ function addcate(){
+    try {
+        include('DBConnection.php');
+    $catename =$_POST['category_name'];
+    $sql="INSERT INTO `category` (`categ_name`) VALUES ('$catename');";
+    if (!$conn->query($sql)) {
+        echo'opps!';
+    }
+    else{
+       echo' <script LANGUAGE="JavaScript">
+                 swal("په بریالی توګه !", "د محضول مغلومات اضافه شول!", "success");
+                
+               </script>;'; 
+    }
+
+    }
+    catch(Exception $e){
+        echo $e->getMessage();
+    }
+   
+ }
+ // add company 
+ function addco(){
+    try {
+        $coname =$_POST['company_name'];
+    include('DBConnection.php');
+    $sql="INSERT INTO `company` (`comp_name`) VALUES ('$coname');";
+    if ($conn->query($sql)) {
+         echo' <script LANGUAGE="JavaScript">
+                 swal("په بریالی توګه !", "د محضول مغلومات اضافه شول!", "success");
+                
+               </script>;'; 
+    }else{
+         echo' ("<script LANGUAGE="JavaScript">
+                 window.alert("Opps");
+                 window.location.href="admin.php";
+               </script>");';
+    }
+    }catch(Exception $e){
+
+    }
+   
+ }
+ // add countery
+ function  addcounter(){
+    try {
+      include('DBConnection.php');
+      $countery_name=$_POST['countery_name'];
+      $sql="INSERT INTO `country` (`count_name`) VALUES (' $countery_name');";
+      if ($conn->query($sql)) {
+       echo' <script LANGUAGE="JavaScript">
+                 swal("په بریالی توګه !", "د محضول مغلومات اضافه شول!", "success");
+                
+               </script>;'; 
+    }
+    else{
+        echo' ("<script LANGUAGE="JavaScript">
+                 window.alert("Opps");
+                 window.location.href="admin.php";
+               </script>");'; 
+    }
+  
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    
+ }
+ // add currecy
+ try {
+    function addCurrency(){
+        include('DBConnection.php');
+        $countery_name = $_POST['currency_name'];
+        $currency_sign = $_POST['currency_sign'];
+        $sql ="INSERT INTO `currency` (`currency_id`, `currency_name`, `currency_symbol`) VALUES (NULL, '$countery_name', '$currency_sign');";
+        if ($conn->query($sql)) {
+           echo' <script LANGUAGE="JavaScript">
+                 swal("په بریالی توګه !", "د محضول مغلومات اضافه شول!", "success");
+                
+               </script>;'; 
+        }
+        else{
+             echo' ("<script LANGUAGE="JavaScript">
+                     window.alert("Opps");
+                
+                   </script>");';  
+        }
+    }
+ }
+ catch(Exception $e){
+    echo $e->getMessage();
+ }
+ function addUnit(){
+    try {
+         include ('DBConnection.php');
+         $unit_name = $_POST['unit_name'];
+         $sql="INSERT INTO `unit` (`unit_id`, `unit_name`) VALUES (NULL, '$unit_name');";
+         if ($conn->query($sql)) {
+            
+                  echo' <script LANGUAGE="JavaScript">
+                 swal("په بریالی توګه !", "د محضول مغلومات اضافه شول!", "success");
+                        window.location.href="";
+               </script>;'; 
+         }
+         else{
+             echo' ("<script LANGUAGE="JavaScript">
+                     window.alert("Opps");
+                
+                   </script>");'; 
+         }
+    }
+    catch(Exception $e){
+        echo $e->getMessage();
+    }
+   
+ }
+ ?>
+
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +207,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="admin.css?verssion=2">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.32/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+  <<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
 </head>
 <body>
 <header class="py-3 mb-4 border-bottom shadow">
@@ -99,16 +304,16 @@
                 <div class="px-4 py-5">
                         <h5 class="card-title"><span>د مشتری معلومات د ننه کړي!</span></h5>
                    
-                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
+                  <form method="post" class="row g-3 needs-validation" novalidate style="text-align:right;" enctype="multipart/form-data">
                     <div class="col-12">
                       <label for="yourName" class="form-label">نوم</label>
                       <input type="text" name="customoer_name" class="form-control" id="" required>
-                      <div class="invalid-feedback">Please,bill id!</div>
+                      <div class="invalid-feedback">Please fill the feld!</div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">پلار نوم</label>
-                      <input type="tex" name="customemer_f_name" class="form-control" id="" required>
+                      <input type="tex" name="  customerfname" class="form-control" id="" required>
                       <div class="invalid-feedback">Please enter number!</div>
                     </div>
                     <div class="col-12">
@@ -116,21 +321,85 @@
                       <input type="email" name="customer_email" class="form-control" id="" required>
                       <div class="invalid-feedback">Please enter price!</div>
                     </div>
-                     <div class="col-12">
-                      <label for="for add" class="form-label">ادرس</label>
-                      <input type="email" name="customer_address" class="form-control" id="" required>
+                   <label for="for add" class="form-label">ادرس</label>
+                     <div class="col-12 input-group" >
+                      
+                   
+                      <div class="invalid-feedback">Please enter price!</div>
+
+                        <label for="for add" class="form-label">ولایت</label>
+                      <select id="province" name="province" onchange="province(this.value)">
+                      <?php 
+                            require_once('DBConnection.php');
+  
+                             $sql="SELECT * FROM `province`";
+                             $result=$conn->query($sql);
+                             if ($result->num_rows>0) {
+
+                                 while ($row = $result->fetch_assoc()) {
+                                     echo'<option value="'.$row["province_id"].'">'.$row["province_name"].'</option>';
+                                 }
+     
+                                }
+
+                        ?>
+                      </select>
+                      <script type="text/javascript">
+                          $(document).ready(function(){
+                            $('#province').on('change', function(){
+                                var pro_id = $(this).val();
+                                $.ajax({
+                                    url: 'ajax.php',
+                                    method:'POST',
+                                    data: {proID: pro_id},
+                                    dataType: "text",
+                                    success:function(html){
+                                            $('#dist').html(html);
+                                    }
+                                });
+                            });
+                          });
+                      </script>
+                      <label for="for add" class="form-label">ولسوالی</label>
+                      <select id="dist" name="dist">
+                         <option value="">ولسوالی</option>
+                      </select>
+                       <label for="for add" class="form-label">کلی</label>
+                      <input  class="form-control" id="locationd" name="location">
                       <div class="invalid-feedback">Please enter price!</div>
                     </div>
-                     <div class="col-12">
+                      <div class="form-label">د اړیکو شمرې</div>
+                      <div class="col-12">
+                      <label for="for add" class="form-label">1. موبایل نمبر</label>
+                      <input type="text" name="mobile" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please enter price!</div>
+                       <label for="for add" class="form-label">2. موبایل نمبر</label>
+                      <input type="text" name="mobile1" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please enter price!</div>
+                       <label for="for add" class="form-label">3.موبایل نمبر</label>
+                      <input type="text" name="mobile2" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please enter price!</div>
+                       <div class="col-12">
                       <label for="for file" class="form-label">انځور</label>
-                      <input type="file" name="email" class="form-control" id="" required>
+                      <input class="form-control" type="file" name="image" value="" />
                       <div class="invalid-feedback">Please enter price!</div>
                     </div>
+                    </div>
+                    
                    
                           <div class="text-center mt-5">
 
-                            <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+                            <input type="submit" name="submit"class="btn btn-primary btn-submit" >
+                            <?php 
 
+                                function success(){
+                                    //  
+                                    echo '<script>  alert ("Data submite successfully");  </script
+                                        window.location.href="admin.php";
+                                    ';
+
+                                }
+                             ?>
                          </div>                   
 
                      </div>
@@ -139,54 +408,83 @@
         </div>
     </div>
 </div>
-         
+        
 </div><!-- End Customers --------------------------------------------------------------------------------------------------------------------------------------------------Card -->
 
-
-<!-- Catagot modal start here ==============================================================================================================================================================================================================================================================================================-->
+<!-- Categot modal start here ==============================================================================================================================================================================================================================================================================================-->
 
 <div class="modal left fade" id="catagory" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog ">
         <div class="modal-content">
-            <div class="row">
+           
                 <div class="col">
                     <div class="modal-body ">
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                
+                 <h5 class="card-title text-center"><span>کټګوری اضافه کړي!</span></h5>
                 <div class="px-4 py-5">  
-                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
-                    <div class="col-12">
-                      <label for="yourName" class="form-label">آی ډی</label>
-                      <input type="text" name="" class="form-control" id="" required>
-                      <div class="invalid-feedback">Please,bill id!</div>
-                    </div>
+                  <form method="post" class="row g-3 needs-validation" novalidate style="text-align:right;">
+                    
                      <div class="col-12">
                       <label for="yourName" class="form-label">نوم</label>
-                      <input type="text" name="" class="form-control" id="" required>
+                      <input type="text" name="category_name" class="form-control" id="" required>
                       <div class="invalid-feedback">Please,bill id!</div>
-                    </div>
-                
-                  </form>
-                <div class="text-center mt-5">
+                      <div class="text-center mt-5">
 
-                    <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+                    <button class="btn btn-primary btn-submit" type="submit" name="addcate">ثبتول</button>
                     
-                </div>                   
+                      </div>
+                    </div>
+                   
+                  </form>
+                  <table class="table table-borderless align-middle mb-0 bg-white table-hover mt-2" style="direction:rtl" class="card">
+                    <thead>
+                        <tr>
+                             <th>کټګوری نوم</th>
+                             <th>عملیات</th>
+        
+                       </tr>
+                  </thead>
+                  <tbody>
+                    
+                        <?php 
+                            require_once('DBConnection.php');
+                            $sql="SELECT * FROM `category` ORDER BY categ_id desc limit 10";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows>0) {
+                                while($row = $result->fetch_assoc()){
+                                  echo'   <tr><td>'.$row["categ_name"].'</td>
+                                    <td><a class="fa fa-edit text-decoration-none" href=""></a>
+            
+                                    </td>
+                                     <td><a class="fa fa-trash text-decoration-none" href=""></a></td>
+                                      </tr>
+                                    ';  
+                                }
+                            }
+                         ?>
+                            
+                        
+    
+                    </tbody>
+                  </table>
 
                 </div>
 
 
             </div> 
                 </div>
-                <div class="col">
-                    list of catagory
-                </div>
-            </div>
+                
+           
            
         </div>
     </div>
 </div>
+<?php 
 
+if (isset($_POST['addcate'])) {
+     addcate();
+}
+ ?>
 <!-- Catgory modal end here ==========================================================================================================================================================================================================================================================================-->
 
 
@@ -196,45 +494,65 @@
 <div class="modal left fade" id="company" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="row">
+           
                 <div class="col">
                     <div class="modal-body ">
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                
-                <div class="px-4 py-5">  
-                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
-                    <div class="col-12">
-                      <label for="yourName" class="form-label">آی ډی</label>
-                      <input type="text" name="" class="form-control" id="" required>
-                      <div class="invalid-feedback">Please,bill id!</div>
-                    </div>
-                     <div class="col-12">
-                      <label for="yourName" class="form-label">نوم</label>
-                      <input type="text" name="" class="form-control" id="" required>
-                      <div class="invalid-feedback">Please,bill id!</div>
-                    </div>
-                
-                  </form>
-                <div class="text-center mt-5">
+                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                         <h5 class="card-title text-center"><span>! کمپنی اضافه کړی</span></h5>
+                      <div class="px-4 py-5">  
+                       <form class="row g-3 needs-validation" novalidate style="text-align:right;" method="post">
+                   
+                         <div class="col-12">
+                          <label for="yourName" class="form-label">د کمپنی نوم</label>
+                          <input type="text" name="company_name" class="form-control" id="" required>
+                         <div class="invalid-feedback">Please,bill id!</div>
+                        </div>
+                         <div class="text-center mt-5">
 
-                    <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+                          <button class="btn btn-primary btn-submit" type="submit" name="addco">ثبتول</button>
                     
-                </div>                   
-
-                </div>
-
-
-            </div> 
-                </div>
-                <div class="col">
-                    list of Company
-                </div>
-            </div>
-           
+                        </div>  
+                      </form>                   
+                        </form>
+                  <table class="table table-borderless align-middle mb-0 bg-white table-hover mt-2" style="direction:rtl" class="card">
+                      <thead>
+                        <tr>
+                             <th>د کمپنی نوم</th>
+                             <th>عملیات</th>
+        
+                       </tr>
+                     </thead>
+                  <tbody>
+                    
+                        <?php 
+                            require_once('DBConnection.php');
+                            $sql="SELECT * FROM `company`";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows>0) {
+                                while($row = $result->fetch_assoc()){
+                                  echo'   <tr><td>'.$row["comp_name"].'</td>
+                                    <td><a class="fa fa-edit text-decoration-none" href=""></a>
+            
+                                    </td>
+                                     <td><a class="fa fa-trash text-decoration-none" href=""></a></td>
+                                      </tr>
+                                    ';  
+                                }
+                            }
+                         ?>
+                   </tbody>
+                  </table>
+                    </div>                      
+                  </div> 
+                </div>  
         </div>
     </div>
 </div>
-
+<?php
+        if (isset($_POST['addco'])) {
+            addco();
+        }
+  ?>
 <!-- Company modle end here ====================================================================================================================================================================================================-->
 
 <!-- countery modal start here ===============================================================================================================================================================================================================================================-->
@@ -242,135 +560,144 @@
 <div class="modal left fade" id="country" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="row">
+           
                 <div class="col">
                     <div class="modal-body ">
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 
-                <div class="px-4 py-5">  
-                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
-                    <div class="col-12">
-                      <label for="yourName" class="form-label">آی ډی</label>
-                      <input type="text" name="" class="form-control" id="" required>
-                      <div class="invalid-feedback">Please,bill id!</div>
-                    </div>
-                     <div class="col-12">
-                      <label for="yourName" class="form-label">نوم</label>
-                      <input type="text" name="" class="form-control" id="" required>
-                      <div class="invalid-feedback">Please,bill id!</div>
-                    </div>
-                
-                  </form>
-                <div class="text-center mt-5">
+                      <div class="px-4 py-5">  
+                       <form class="row g-3 needs-validation" novalidate style="text-align:right;" method="post">
+                        <div class="col-12">
+                          <label for="yourName" class="form-label">نوم</label>
+                          <input type="text" name="countery_name" class="form-control" id="" required>
+                        <div class="invalid-feedback">Please,bill id!</div>
+                       </div>
+                         <div class="text-center mt-5">
 
-                    <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+                                 <button class="btn btn-primary btn-submit" type="submit" name="addcountery">ثبتول</button>
                     
-                </div>                   
+                         </div>
+                  </form>
+                                  
 
                 </div>
 
 
-            </div> 
+                   </div> 
                 </div>
-                <div class="col">
-                    list of countery
-                </div>
-            </div>
+              
            
         </div>
     </div>
 </div>
-<!-- countery modal end here ============-===================================================================================================================================================================================================================================-->
+<?php 
+    if (isset($_POST['addcountery'])) {
+        addcounter();
+    }
+ ?>
+<!-- currencey modal end here ============-===================================================================================================================================================================================================================================-->
 
 <div class="modal left fade" id="currency" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 <div class="modal-dialog">
     <div class="modal-content">
-         <div class="row">
+         
             <div class="col">
              <div class="modal-body ">
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 
                 <div class="px-4 py-5">  
-                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
-                    <div class="col-12">
-                      <label for="yourName" class="form-label">آی ډی</label>
-                      <input type="text" name="" class="form-control" id="" required>
-                      <div class="invalid-feedback">Please,bill id!</div>
-                    </div>
+                  <form class="row g-3 needs-validation" novalidate style="text-align:right;" method="post">
                      <div class="col-12">
                       <label for="yourName" class="form-label">نوم</label>
-                      <input type="text" name="" class="form-control" id="" required>
+                      <input type="text" name="currency_name" class="form-control" id="" required>
                       <div class="invalid-feedback">Please,bill id!</div>
                     </div>
                      <div class="col-12">
                       <label for="yourName" class="form-label">سمبول</label>
-                      <input type="text" name="" class="form-control" id="" required>
+                      <input type="text" name="currency_sign" class="form-control" id="" required>
                       <div class="invalid-feedback">Please,bill id!</div>
                     </div>
-                 <div class="text-center mt-5">
+                  <div class="text-center mt-5">
 
-                    <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+                    <button class="btn btn-primary btn-submit" type="submit" name="addCurrency">ثبتول</button>
                     
-                </div> 
+                  </div> 
                   </form>
-                                 
+                            
                 </div>
-
-
              </div> 
-            </div>
-                <div class="col">
-                    list of currency 
-                </div>
-            </div>
-           
+            </div>  
         </div>
     </div>
 </div>
-<!-- currency modal start here ==================================================================================================================================================================================================================================================-->
+<?php 
+  if (isset($_POST['addCurrency'])) {
+      addCurrency();
+  }
 
-<div class="modal left fade" id="country" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+ ?>
+<!-- currency unit here ==================================================================================================================================================================================================================================================-->
+
+<div class="modal left fade" id="unit" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="row">
-                <div class="col">
-                    <div class="modal-body ">
+        <div class="modal-content">  
+         <div class="col">
+            <div class="modal-body ">
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                
+                 <h5 class="card-title text-center"><span>Add Unit</span></h5>   
                 <div class="px-4 py-5">  
-                  <form class="row g-3 needs-validation" novalidate style="text-align:right;">
-                    <div class="col-12">
-                      <label for="yourName" class="form-label">آی ډی</label>
-                      <input type="text" name="" class="form-control" id="" required>
-                      <div class="invalid-feedback">Please,bill id!</div>
-                    </div>
+                  <form class="row g-3 needs-validation" novalidate style="text-align:right;" method="post">
                      <div class="col-12">
                       <label for="yourName" class="form-label">نوم</label>
-                      <input type="text" name="" class="form-control" id="" required>
+                      <input type="text" name="unit_name" class="form-control" id="" required>
                       <div class="invalid-feedback">Please,bill id!</div>
-                    </div>
-                
+                      <div class="text-center mt-5">
+                       <button class="btn btn-primary btn-submit" type="submit" name="addUnit">ثبتول</button>             
+                      </div>
+                    </div> 
                   </form>
-                <div class="text-center mt-5">
-
-                    <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
+                    <table class="table table-borderless align-middle mb-0 bg-white table-hover mt-2" style="direction:rtl" class="card">
+                      <thead>
+                        <tr>
+                             <th>د کمپنی نوم</th>
+                             <th>عملیات</th>
+        
+                       </tr>
+                     </thead>
+                  <tbody>
                     
-                </div>                   
-
+                        <?php 
+                            require_once('DBConnection.php');
+                            $sql="SELECT * FROM `unit`";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows>0) {
+                                while($row = $result->fetch_assoc()){
+                                  echo'   <tr><td>'.$row["unit_name"].'</td>
+                                    <td><a class="fa fa-edit text-decoration-none" href=""></a>
+            
+                                    </td>
+                                     <td><a class="fa fa-trash text-decoration-none" href=""></a></td>
+                                      </tr>
+                                    ';  
+                                }
+                            }
+                         ?>
+                   </tbody>
+                  </table>             
                 </div>
-
-
             </div> 
-                </div>
-                <div class="col">
-                    list of countery
-                </div>
-            </div>
+         </div>
+               
            
         </div>
     </div>
 </div>
-<!-- currency modal end here=================================================================================================================================================================================================================================================== -->
+<?php
+    if (isset($_POST['addUnit'])) {
+            addUnit(); 
+    }
+  ?>
+<!-- unit modal end here=================================================================================================================================================================================================================================================== -->
 
                     <!-- Revenue Card -->
     <div class="col-xxl-4 col-md-4" style="direction:rtl;">
@@ -681,8 +1008,8 @@
 </div>
  <!-- product modal =================================== end============================================================================= -->
         </main>
-        <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3" style="text-align:right;">
-            <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
+        <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3" style="text-align:right; b">
+            <div class="bg-light border rounded-3 p-1 h-100 sticky-top" >
                 <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
                  
                     <li>
@@ -695,14 +1022,14 @@
                       <li>
                         <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#catagory" style="text-align:righ;">
                              <span class="d-none d-sm-inline">Catagory</span>
-                          <i class="bi bi-bricks fs-5"></i>
+                          <i class="bi bi-diagram-3" style="font-size:22px;"></i>
                             </a>
                     </li>
                       <li>
                         
                         <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#company" style="text-align:righ;">
                              <span class="d-none d-sm-inline">Company</span>
-                          <i class="bi bi-bricks fs-5"></i>
+                          <i class="bi bi-c-square-fill"style="font-size:22px;"></i>
                             </a>
                     </li>
                      <li>
@@ -716,21 +1043,21 @@
                         
                         <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#currency" style="text-align:righ;">
                                 <span class="d-none d-sm-inline">currency</span>
+                                <i class="fa fa-money" style="font-size:22px;"></i>
+                        </a>
+                    </li>
+                    <li>
+                        
+                        <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#unit" style="text-align:righ;">
+                                <span class="d-none d-sm-inline">unit</span>
                                 <i class="bi bi-bricks fs-5"></i>
                         </a>
                     </li>
-                    
-                    
-                    <li>
-                        <a href="sells.php" class="nav-link px-2 text-truncate">
-                             <span class="d-none d-sm-inline">Sells</span>
-                          <i class="bi bi-shop fs-5"></i>
-                            </a>
-                    </li>
+                
                     <li>
                         <a href="goods.php" class="nav-link px-2 text-truncate">
                              <span class="d-none d-sm-inline">Products</span>
-                          <i class="bi bi-bricks fs-5"></i>
+                          <i class="bi bi-cart-plus fs-5" style=""></i>
                             </a>
                     </li>
 
