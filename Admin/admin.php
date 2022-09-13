@@ -1,5 +1,22 @@
 <?php 
-
+if (isset($_POST["provID"])) {
+    require_once('DBConnection.php');
+$sql="SELECT * FROM `district` WHERE province_id=".$_POST["provID"];
+$outpot ='';
+$result=$conn->query($sql);
+if ($result->num_rows>0) {
+    $i=0;
+echo'<option value="">selext</option>';
+while ($row = $result->fetch_assoc()) {
+ echo '<option value="'.$row["district_id"].'">'.$row["district_name"].'</option>';
+            
+        }
+        //echo $outpot;
+    }
+    else{
+         echo"<option> no select a</option>";
+        }
+}
 function addcustomer(){
    // echo  $filename = $_FILES["uploadfile"]["name"];
 $name =$_POST['customoer_name'];
@@ -132,10 +149,10 @@ if (isset($_POST['submit'])) {
                </script>;'; 
     }
     else{
-        echo' ("<script LANGUAGE="JavaScript">
+        echo' <script LANGUAGE="JavaScript">
                  window.alert("Opps");
                  window.location.href="admin.php";
-               </script>");'; 
+               </script>"'; 
     }
   
     } catch (Exception $e) {
@@ -178,6 +195,48 @@ if (isset($_POST['submit'])) {
                  swal("په بریالی توګه !", "د محضول مغلومات اضافه شول!", "success");
                         window.location.href="";
                </script>;'; 
+         }
+         else{
+             echo' ("<script LANGUAGE="JavaScript">
+                     window.alert("Opps");
+                
+                   </script>");'; 
+         }
+    }
+    catch(Exception $e){
+        echo $e->getMessage();
+    }
+   
+ }
+  function addStore(){
+    try {
+         include ('DBConnection.php');
+          $location = $_POST['location_name'];
+         $dist = $_POST['district'];
+         $province =$_POST['address'];
+         $sql2="INSERT INTO `location` (`location_name`, `location_province`, `location_district`) VALUES ( '$location', '$province', '$dist');";
+         if (!$conn->query($sql2)) {
+           echo "opps!";
+        }
+
+            
+                  echo' <script LANGUAGE="JavaScript">
+                 swal("په بریالی توګه !", "د محضول مغلومات اضافه شول!", "success");
+                        
+               </script>;'; 
+         $sql ="SELECT * FROM `location` ORDER BY location_id desc limit 1";
+         $id = $conn->query($sql);
+         $addres=0;
+         while($row = $id->fetch_assoc()){
+            $addres = $row["location_id"];
+         }
+         $store_name = $_POST['store_name'];
+         //$store_address = $_POST['store_address'];
+         $sql="INSERT INTO `store` (`store_id`, `store_name`, `store_address`) VALUES (NULL, '$store_name', '$addres');;";
+         if ($conn->query($sql)) {
+         $sqll="SET FOREIGN_KEY_CHECKS = 0;";
+         $conn->query($sqll);
+        
          }
          else{
              echo' ("<script LANGUAGE="JavaScript">
@@ -699,6 +758,110 @@ if (isset($_POST['addcate'])) {
   ?>
 <!-- unit modal end here=================================================================================================================================================================================================================================================== -->
 
+<!-- store here ==================================================================================================================================================================================================================================================-->
+
+<div class="modal left fade" id="store" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">  
+         <div class="col">
+            <div class="modal-body ">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                 <h5 class="card-title text-center"><span>Add Store</span></h5>   
+                <div class="px-4 py-5">  
+                  <form class="row g-3 needs-validation" novalidate style="text-align:right;" method="post">
+                     <div class="col-12">
+                      <label for="yourName" class="form-label">نوم</label>
+                      <input type="text" name="store_name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                      <label for="yourName" class="form-label">سټور ادرس</label>
+                        <select class="form-control"  id="address" name="address" onchange="address(this.value)">
+                      <?php 
+                            require_once('DBConnection.php');
+  
+                             $sql="SELECT * FROM `province`";
+                             $result=$conn->query($sql);
+                             if ($result->num_rows>0) {
+
+                                 while ($row = $result->fetch_assoc()) {
+                                     echo'<option value="'.$row["province_id"].'">'.$row["province_name"].'</option>';
+                                 }
+     
+                                }
+
+                        ?>
+                      </select>
+                      <script type="text/javascript">
+                          $(document).ready(function(){
+                            $('#address').on('change', function(){
+                                var prov_id = $(this).val();
+                                $.ajax({
+                                    url: 'store.php',
+                                    method:'POST',
+                                    data: {provID: prov_id},
+                                    dataType: "text",
+                                    success:function(html){
+                                            $('#district').html(html);
+                                    }
+                                });
+                            });
+                          });
+                      </script>
+                      <label for="for add" class="form-label">ولسوالی</label>
+                      <select id="district" name="district" class="form-control" >
+                         <option value="">ولسوالی</option>
+                      </select>
+                         <label for="yourName" class="form-label">کلی</label>
+                      <input type="text" name="location_name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill id!</div>
+                   
+                      <div class="text-center mt-5">
+                       <button class="btn btn-primary btn-submit" type="submit" name="addStore">ثبتول</button>             
+                      </div>
+                    </div> 
+                  </form>
+                    <table class="table table-borderless align-middle mb-0 bg-white table-hover mt-2" style="direction:rtl" class="card">
+                      <thead>
+                        <tr>
+                             <th>د کمپنی نوم</th>
+                             <th>عملیات</th>
+        
+                       </tr>
+                     </thead>
+                  <tbody>
+                    
+                        <?php 
+                            require_once('DBConnection.php');
+                            $sql="SELECT * FROM `store`";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows>0) {
+                                while($row = $result->fetch_assoc()){
+                                  echo'   <tr><td>'.$row["store_name"].'</td>
+                                    <td><a class="fa fa-edit text-decoration-none" href=""></a>
+            
+                                    </td>
+                                     <td><a class="fa fa-trash text-decoration-none" href=""></a></td>
+                                      </tr>
+                                    ';  
+                                }
+                            }
+                         ?>
+                   </tbody>
+                  </table>             
+                </div>
+            </div> 
+         </div>
+               
+           
+        </div>
+    </div>
+</div>
+<?php
+    if (isset($_POST['addStore'])) {
+            addStore(); 
+    }
+  ?>
+<!-- store modal end here=================================================================================================================================================================================================================================================== -->
+
                     <!-- Revenue Card -->
     <div class="col-xxl-4 col-md-4" style="direction:rtl;">
             <div class="card info-card revenue-card" style="background-color: #eef;">
@@ -1051,6 +1214,13 @@ if (isset($_POST['addcate'])) {
                         <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#unit" style="text-align:righ;">
                                 <span class="d-none d-sm-inline">unit</span>
                                 <i class="bi bi-bricks fs-5"></i>
+                        </a>
+                    </li>
+                     <li>
+                        
+                        <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#store" style="text-align:righ;">
+                                <span class="d-none d-sm-inline">Store</span>
+                                <i class="bi bi-shop fs-5"></i>
                         </a>
                     </li>
                 
