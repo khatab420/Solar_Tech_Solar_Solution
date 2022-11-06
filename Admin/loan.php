@@ -189,25 +189,28 @@
               <div class="col"></div>
               <div class="col-lg-10 card" style="direction:rtl;">
 
-                   <h5 class="card-title d-flex d-sm-inline">قرض<span></span></h5>
+                   <h5 class="card-title d-flex d-sm-inline">بیل او انوایس <span>| نن</span></h5>
                    
                   <tr class="">
 
                  <table class="table table-bordered border-primary" >
-                   <a  class=" d-flex justify-content text-decoration-none text-end" data-bs-toggle="modal" data-bs-target="#loan" style="text-align:righ;">
-                       Add Loan ifno<i class="bi-plus"></i>
+                   <a  class=" d-flex justify-content text-decoration-none text-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="text-align:righ;">
+                       Create New Bill <i class="bi-plus"></i>
                    </a>
 
                  <thead class="overflow-auto h-100">
                                   
                     
-                    <th>آی ډی</th>
-                    <th>د قرض نمبر</th>
-                    <th>د قرض انداره</th>
+                    <th>بیل آی ډی</th>
+                    <th>مشتری آی ډی</th>
+                    <th>د مخصول آی ډي</th>
                     <th>خرڅونکی آی ډی</th>
-                    <th>آدا شوی اندازه</th>
-                    <th>ټوټل قرض</th>
-                   
+                    <th>سټور آی ډي</th>
+                    <th>تاریخ</th>
+                    <th>مقدار</th>
+                    <th>حالت</th>
+                    <th>پولی واخد</th>
+                    <th>حالت</th>
                     
                  </tr>
 
@@ -221,7 +224,10 @@
                             <td>data</td>
                             <td>data</td>
                             <td>data</td>
-                          
+                            <td>data</td>
+                            <td>data</td>
+                            <td>data</td>
+                            <td>data</td>
                            
                         </tr>
      
@@ -234,46 +240,78 @@
 
   <!--         <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> <i class="fa fa-info"></i> Get information
 </button> -->
-<div class="modal fade" id="loan" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body ">
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 
-                <div class="px-4 py-5">  
+                <div class="px-4 py-5">
+
+                   
                   <form class="row g-3 needs-validation" novalidate style="text-align:right;">
                     <div class="col-12">
-                      <label for="yourName" class="form-label">د مشتری آی ډی</label>
+                      <label for="yourName" class="form-label">بیل آی ډي</label>
                       <input type="text" name="" class="form-control" id="" required>
                       <div class="invalid-feedback">Please,bill id!</div>
                     </div>
 
                     <div class="col-12">
-                      <label for="yourEmail" class="form-label">د قرضې آی ډي</label>
+                      <label for="yourEmail" class="form-label">بیل نمر</label>
                       <input type="email" name="email" class="form-control" id="" required>
                       <div class="invalid-feedback">Please enter number!</div>
                     </div>
                     <div class="col-12">
-                      <label for="yourEmail" class="form-label">د قزض اندازه</label>
+                      <label for="yourEmail" class="form-label">پولی واخد</label>
                       <input type="email" name="email" class="form-control" id="" required>
                       <div class="invalid-feedback">Please enter price!</div>
                     </div>
                       <div class="col-12">
-                      <label for="yourName" class="form-label">آداه شوی قرضه</label>
+                      <label for="yourName" class="form-label">مشتری آی ډی</label>
                       <input type="text" name="name" class="form-control" id="" required>
-                      <div class="invalid-feedback">Please,!</div>
+                      <div class="invalid-feedback">Please,bill id!</div>
                     </div>
                       <div class="col-12">
-                      <label for="yourName" class="form-label">ټوله قرض</label>
+                      <label for="yourName" class="form-label">محصول آی ډي</label>
                       <input type="text" name="name" class="form-control" id="" required>
                       <div class="invalid-feedback">Please,bill info!</div>
                     </div>
+                      <div class="col-12">
+                      <label for="yourName" class="form-label">قمت</label>
+                      <input type="text" name="name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill info!</div>
+                    </div>
+                      <div class="col-12">
+                      <label for="yourName" class="form-label">مقدار</label>
+                      <input type="text" name="name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill ifo!</div>
+                    </div>
+                      <div class="col-12">
+                      <label for="yourName" class="form-label">د خر څوونکی آی ډي</label>
+                      <input type="text" name="name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill info!</div>
+                    </div>
+                      <div class="col-12">
+                      <label for="yourName" class="form-label">سټور آی ډي</label>
+                      <input type="text" name="name" class="form-control" id="" required>
+                      <div class="invalid-feedback">Please,bill info!</div>
+                    </div>
+
                     
+                  
+
+                
                   </form>
+
+
+
                 <div class="text-center mt-5">
+
 
                     <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
                     
+
+
                 </div>                   
 
                 </div>
@@ -292,7 +330,7 @@
                 <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
                  
                     <li>
-                        <a href="admin.php" class="nav-link px-2 text-truncate">
+                        <a href="#" class="nav-link px-2 text-truncate">
                           <span class="d-none d-sm-inline">Dashboard</span>
                             <i class="bi bi-speedometer fs-5"></i>
                             
@@ -302,12 +340,6 @@
                     <li>
                         <a href="goods.php" class="nav-link px-2 text-truncate">
                              <span class="d-none d-sm-inline">Products</span>
-                          <i class="bi bi-bricks fs-5"></i>
-                            </a>
-                    </li>
-                     <li>
-                        <a href="catagory.php" class="nav-link px-2 text-truncate">
-                             <span class="d-none d-sm-inline">Catagory.php</span>
                           <i class="bi bi-bricks fs-5"></i>
                             </a>
                     </li>

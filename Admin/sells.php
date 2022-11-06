@@ -240,7 +240,9 @@
             <div class="modal-body ">
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 
-                <div class="px-4 py-5">  
+                <div class="px-4 py-5">
+
+                   
                   <form class="row g-3 needs-validation" novalidate style="text-align:right;">
                     <div class="col-12">
                       <label for="yourName" class="form-label">د مشتری آی ډی</label>
@@ -270,10 +272,16 @@
                     </div>
                     
                   </form>
+
+
+
                 <div class="text-center mt-5">
+
 
                     <button class="btn btn-primary btn-submit" type="submit">ثبتول</button>
                     
+
+
                 </div>                   
 
                 </div>
@@ -292,11 +300,17 @@
                 <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
                  
                     <li>
-                        <a href="admin.php" class="nav-link px-2 text-truncate">
+                        <a href="index.php" class="nav-link px-2 text-truncate">
                           <span class="d-none d-sm-inline">Dashboard</span>
                             <i class="bi bi-speedometer fs-5"></i>
                             
                         </a>
+                    </li>
+                     <li>
+                        <a href="sells.php" class="nav-link px-2 text-truncate">
+                             <span class="d-none d-sm-inline">Sells</span>
+                          <i class="bi bi-shop fs-5"></i>
+                            </a>
                     </li>
                
                     <li>
@@ -305,21 +319,15 @@
                           <i class="bi bi-bricks fs-5"></i>
                             </a>
                     </li>
-                     <li>
-                        <a href="catagory.php" class="nav-link px-2 text-truncate">
-                             <span class="d-none d-sm-inline">Catagory.php</span>
-                          <i class="bi bi-bricks fs-5"></i>
-                            </a>
-                    </li>
 
                     <li>
-                        <a href="goods.php" class="nav-link px-2 text-truncate">
+                        <a href="bill.php" class="nav-link px-2 text-truncate">
                              <span class="d-none d-sm-inline">Bill</span>
                           <i class="bi bi-receipt fs-5"></i>
                             </a>
                     </li>
                     <li>
-                        <a href="goods.php" class="nav-link px-2 text-truncate">
+                        <a href="loan.php" class="nav-link px-2 text-truncate">
                              <span class="d-none d-sm-inline"> Loan</span>
                           <i class="bi bi-bank fs-5"></i>
                             </a>

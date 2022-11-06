@@ -1,10 +1,16 @@
+
+
+
+
 <?php
+
   function addproduct(){
     include('DBConnection.php');
     $goods_name =$_POST['goods_name'];
     $goods_discription = $_POST['goods_discription'];
     $buy_price = $_POST['buy_price'];
     $currency_id = $_POST['currency_id'];
+    $quantity =  $_POST['quantity'];
     $category_id = $_POST['category_id'];
     $country_id = $_POST['country_id'];
     $company_id = $_POST['company_id'];
@@ -26,8 +32,8 @@
       }
      $sqll="SET FOREIGN_KEY_CHECKS = 0;";
      $conn->query($sqll);
-     $sql2="INSERT INTO `goods` (`goods_id`, `goods_name`, `goods_discription`, `buy_price`, `entry_date`, `image`, `category_id`, `company_id`, `country_id`, `unit_id`, `currency`)
-      VALUES (NULL, '$goods_name', '$goods_discription', '$buy_price', '2022-09-13', '$targetFilePath', '$category_id', '$company_id', '$country_id', '$unit_id', '$currency_id');";
+     $sql2="INSERT INTO `goods` (`goods_id`, `goods_name`, `goods_discription`, `buy_price`, `entry_date`, `image`, `category_id`, `company_id`, `country_id`, `unit_id`, `currency`,`quantity`)
+      VALUES (NULL, '$goods_name', '$goods_discription', '$buy_price', '2022-09-13', '$targetFilePath', '$category_id', '$company_id', '$country_id', '$unit_id', '$currency_id','$quantity');";
       if ( $conn->query($sql2)) {
          echo' <script LANGUAGE="JavaScript">
                  swal("په بریالی توګه !", "د محضول مغلومات اضافه شول!", "success");
@@ -45,6 +51,7 @@
 
  ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,9 +63,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>admin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="admin.css?verssion=2">
+    <link rel="stylesheet" type="text/css" href="admin.css?verssion=8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <link href="../style.css?verssion=4" rel="stylesheet">
 </head>
 <body>
 <header class="py-3 mb-4 border-bottom shadow">
@@ -93,121 +102,13 @@
     </div>
 </header>
 <div class="container-fluid ">
+  <div class="id"> </div>
     <div class="row ">
 
        <main class="col-lg-9 col-md-8 col-sm-3 overflow-auto h-100">
 
             <div class="bg-light border rounded-3 p-3">
-              <div class="row">
-                   <!-- Customers Card -->
-            <div class="col-xxl-4 col-md-4" style="direction:rtl;">
-
-              <div class="card info-card customers-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>پلټنه</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">نن</a></li>
-                    <li><a class="dropdown-item" href="#">میاشت</a></li>
-                    <li><a class="dropdown-item" href="#">کال</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">مشتریان <span>| کال</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>1244</h6>
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">ریات شوی</span>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-            </div><!-- End Customers Card -->
-
-
-                    <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-4" style="direction:rtl;">
-              <div class="card info-card revenue-card" style="background-color: #eef;">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>پلټنه</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">نن</a></li>
-                    <li><a class="dropdown-item" href="#">میاشت</a></li>
-                    <li><a class="dropdown-item" href="#">کال</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">ګټه <span>| میاشت</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>$3,264</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">کمه شوی</span>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- End Revenue Card -->
-
-                 <div class="col-xxl-4 col-md-4">
-              <div class="card info-card sales-card">
-
-
-                <div class="filter" style="direction: rtl;">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">نن</a></li>
-                    <li><a class="dropdown-item" href="#">میاشت</a></li>
-                    <li><a class="dropdown-item" href="#">کال</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body" style="direction:rtl;">
-                  <h5 class="card-title">خرڅ شوی <span>| نن</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>145</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">ریات شوی</span>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- End Sales Card -->
-              </div>
-              
+             
 
               <div class="col d-flex justify-content-end">
 
@@ -233,42 +134,85 @@
                 
               </div>
               <div class="card table-responsive">
-                 <table class="table mt-2 table-ligh table table-hover  ">
+                 <table id="sells" class="table mt-2 table-ligh table table-hover  " style="direction:rtl">
                 <thead class="overflow-auto h-100">
       
                   <tr class="">
 
-                     <th>goods_id</th>
-                     <th>goods_name</th>
-                     <th>goods_discription</th>
-                     <th>buy_price</th>
-                     <th>entry_date</th>
-                     <th>category_id</th>
-                     <th>company_id</th>
-                     <th> country_id</th>
-                     <th>currency</th>
+                     <th>نمبر</th>
+                     <th>د محصول نوم</th>
+                     <th>جزیات</th>
+                     <th>د اخستلو بیه</th>
+                     <th>تاریخ</th>
+                     <th>مقدار</th>
+                     <th>ګټګوری</th>
+                     <th>کمپنی</th>
+                     <th> هیواد</th>
+                     <th>پولی واحد</th>
+                     <th>یونېټ</th>
+                     <th>عملیات</th>
                  </tr>
 
                </thead>
               <tbody>
+               <?php 
+                      require_once('DBConnection.php');
+                       $sql="SELECT goods_name,goods.goods_id,goods.goods_discription, goods.buy_price, goods.entry_date,company.comp_name ,country.count_name,currency.currency_name,unit.unit_name,sum(quantity) AS Qantity,category.categ_name FROM unit, currency, company,country,goods LEFT JOIN category ON category.categ_id = goods.category_id GROUP BY category.categ_name";
+                      $result = $conn->query($sql);
+                      if ($result->num_rows>0) {
+                       
+                                while($row = $result->fetch_assoc()){
+                                   $button ='<td> <button id="btn" class ="userinfo btn btn-outline-warning" data-id='.$row["goods_id"].'>Sell</button></td>';
+                                  if ($row["Qantity"]<=0) {
+                                       $row["Qantity"] = "<p style='color:red'>محصولات موحود نه دی</p>"; 
+                                       $button ='<td> <button style="text-decoration:line-through" class ="userinfo btn btn-outline-warning disabled" data-id='.$row["goods_id"].'>Sell</button></td>';
+                                  }
 
-                 <tr>
-                    <td>data</td>
-                    <td>data</td>
-                    <td>data</td>
-                    <td>data</td>
-                    <td>data</td>
-                    <td>jdata</td>
-                    <td>data</td>
-                    <td>data</td>
-                    <td>data</td>
-                  </tr>
-     
-      
+                                  echo'<tr>
+                                         <a href="#"> <td>'.$row["goods_id"].'</td></a>
+                                         <td><a class="text-dark d-flex justify-content-center text-decoration-none" data-bs-toggle="modal" data-bs-target="#showAndSell">'.$row["goods_name"].'</a></td> 
+                                          <td>'.$row["goods_discription"].'</td>
+                                          <td>'.$row["buy_price"].'</td>
+                                          <td>'.$row["entry_date"].'</td>
+                                          <td id="q">'.$row["Qantity"].'</td>
+                                          <td>'.$row["categ_name"].'</td>
+                                          <td>'.$row["comp_name"].'</td>
+                                          <td>'.$row["count_name"].'</td>
+                                          <td>'.$row["currency_name"].'</td>
+                                              <td>'.$row["unit_name"].'</td>
+                                         
+                                              '.$button.'
+                                       </tr>';
+                                    
+                                         
+                                       echo '<script>
+                                                  
+                                              </script>';
+                                }
+
+                     }
+                 ?>
                </tbody>
              </table> 
               </div>
-            
+            <script type="text/javascript">
+              $(document).ready(function(){
+                $('.userinfo').click(function(){
+                  var userid = $(this).data('id');
+                  $.ajax({
+                    url: 'ajax.php',
+                    type: 'post',
+                    data: {userid: userid},
+                    success: function(response){
+                      $('.modal-body').html(response);
+                      $('#showAndSell').modal('show');
+                      $('#userifo').hide();
+                    }
+                  });
+                
+                });
+              });
+            </script>
             </div>
  <!-- add product modal =================================================================================================================================strat-->
 <div class="modal fade" id="product">
@@ -298,6 +242,10 @@
                 <div class="input-group mt-2">
                    <input type="text" class="form-control" required placeholder="" name="buy_price">
                     <span class="input-group-text">د اخستلو بیه</span>
+                </div>
+                 <div class="input-group mt-2">
+                   <input type="text" class="form-control" required placeholder="" name="quantity">
+                    <span class="input-group-text">مقدار</span>
                 </div>
                  <div class="input-group mt-2">
 
@@ -436,7 +384,64 @@ if(isset($_POST['addproduct'])){
   echo  addproduct();
 }
 ?>
- <!-- product modal =================================== end============================================================================= -->
+ <!-- add product modal  =================================== end============================================================================= -->
+
+<!--   Sell product s modle ================================================================================================================= -->
+
+
+
+<div class="modal fade" id="showAndSell">
+
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel" style="text-align:center">Sell And Show</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">.col-md-4</div>
+      <div class="col-md-6 ms-auto">.col-md-4 .ms-auto</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
+      <div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-9">
+       
+        <div class="row">
+          <div class="col-8 col-sm-6">
+            Level 2: .col-8 .col-sm-6
+          </div>
+          <div class="col-4 col-sm-6">
+            Level 2: .col-4 .col-sm-6
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      </div>
+      <div class="user"></div>
+    
+      <form method="post">
+         <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <a href="liveSearch.php" type="submit" class="btn btn-primary"name="confirm" value="confirm"></a>
+      </div>
+      </form>
+     
+    </div>
+  </div>
+</div>
+
+<!--   Sell product s modle ================================================================================================================= -->
         </main>
          <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3" style="text-align:right;">
             <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
@@ -449,68 +454,45 @@ if(isset($_POST['addproduct'])){
                             
                         </a>
                     </li>
-                      <li>
-                        <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#catagory" style="text-align:righ;">
-                             <span class="d-none d-sm-inline">Catagory</span>
-                          <i class="bi bi-bricks fs-5"></i>
-                            </a>
-                    </li>
-                      <li>
-                        
-                        <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#company" style="text-align:righ;">
-                             <span class="d-none d-sm-inline">Company</span>
-                          <i class="bi bi-bricks fs-5"></i>
-                            </a>
-                    </li>
-                     <li>
-                        
-                        <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#country" style="text-align:righ;">
-                                <span class="d-none d-sm-inline">Countery</span>
-                                <i class="bi bi-bricks fs-5"></i>
-                        </a>
-                    </li>
-                    <li>
-                        
-                        <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#currency" style="text-align:righ;">
-                                <span class="d-none d-sm-inline">currency</span>
-                                <i class="bi bi-bricks fs-5"></i>
-                        </a>
-                    </li>
-                    <li>
-                        
-                        <a  href="#"  class=" nav-link px-2 text-truncate" data-bs-toggle="modal" data-bs-target="#unit" style="text-align:righ;">
-                                <span class="d-none d-sm-inline">unit</span>
-                                <i class="bi bi-bricks fs-5"></i>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="sells.php" class="nav-link px-2 text-truncate">
-                             <span class="d-none d-sm-inline">Sells</span>
-                          <i class="bi bi-shop fs-5"></i>
-                            </a>
-                    </li>
-                    <li>
-                        <a href="goods.php" class="nav-link px-2 text-truncate">
-                             <span class="d-none d-sm-inline">Products</span>
-                          <i class="bi bi-bricks fs-5"></i>
-                            </a>
-                    </li>
-
-                    <li>
-                        <a href="bill.php" class="nav-link px-2 text-truncate">
-                             <span class="d-none d-sm-inline">Bill</span>
-                          <i class="bi bi-receipt fs-5"></i>
-                            </a>
-                    </li>
-                    <li>
-                        <a href="loan.php" class="nav-link px-2 text-truncate">
-                             <span class="d-none d-sm-inline"> Loan</span>
-                          <i class="bi bi-bank fs-5"></i>
-                            </a>
-                    </li>
-                   
-                </ul>
+                         </ul>
+                   <!-- category search Start -->
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">د کټکوری پر اساس پلټڼه</span></h5>
+                <div class="bg-light p-4 mb-30">
+                    <form>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" checked id="size-all">
+                            <label class="custom-control-label" for="size-all">ټول مخصولات</label>
+                            <span class="badge border font-weight-normal"style="color:black;">1000</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="size-1">
+                            <label class="custom-control-label" for="size-1">بطری</label>
+                            <span class="badge border font-weight-normal"style="color:black;">444</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="size-2">
+                            <label class="custom-control-label" for="size-2">سنبر سیبل</label>
+                            <span class="badge border font-weight-normal"style="color:black;">295</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="size-3">
+                            <label class="custom-control-label" for="size-3">شمسی</label>
+                            <span class="badge border font-weight-normal" style="color:black;">246</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="size-4">
+                            <label class="custom-control-label" for="size-4">مولد</label>
+                            <span class="badge border font-weight-normal"style="color:black;">145</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                            <input type="checkbox" class="custom-control-input" id="size-5">
+                            <label class="custom-control-label" for="size-5">واټر پمپ</label>
+                            <span class="badge border font-weight-normal"style="color:black;">168</span>
+                        </div>
+                    </form>
+                </div>
+                <!-- category -->
+            
             </div>
         </aside>
        
